@@ -15,8 +15,16 @@ $obj->header = (object)$obj->header;
 <h1> 
 <?=$obj->header->title?>
 </h1>
+
+<form action="detail01_do.php" method="post">
 <ol> 
-<? foreach($obj->best_practice as $bp){ ?>
- <li><?=$bp?></li>
+<? foreach($obj->best_practice as $idx0 => $bp){ ?>
+ <li>
+    <input type="checkbox" name="chk[<?=$idx0?>">
+ <?=$bp?></li>
 <? } ?>
 </ol>
+<center> 
+    <input type="submit" value="ส่งข้อมูล">
+</center> 
+</form>
