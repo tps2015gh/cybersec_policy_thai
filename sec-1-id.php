@@ -1,8 +1,6 @@
-<style>
-.row  {padding:6px;border:1px solid silver; background-color: lightgoldenrodyellow;
 
-        margin-left:4px;margin-right: 4px;}
-</style> 
+<? include("_css.php"); ?>
+<? include("_menu.php"); ?>
 
 <?php  
 
