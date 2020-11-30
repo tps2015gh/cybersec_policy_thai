@@ -12,7 +12,8 @@ function load_ar_status(){
     return  [   0=> ['ok'],
                 1=> ["ok","ok","ok","ok","ok"]
                 ,2=> ["ok","ok","ok","ok","ok","ok","ok","ok","ok"]
-                , 3 => ["ok","ok","ok","ok"]
+                , 3 => ["ok","ok","ok","ok"
+                    ,'ok','ok','ok','ok','ok','ok','ok','ok', ]
             ];
 }
 
