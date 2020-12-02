@@ -18,10 +18,10 @@ class SQLiteConnection {
      * @return \PDO
      */
     public function connect() {
-        // if ($this->pdo == null) {
-            // $this->pdo = new \PDO("sqlite:" . Config::PATH_TO_SQLITE_FILE );
-        // }
-        // return $this->pdo;
+        if ($this->pdo == null) {
+            $this->pdo = new \PDO("sqlite:" . \App\Config::PATH_TO_SQLITE_FILE );
+        }
+         return $this->pdo;
 
         return "ATE";
     }

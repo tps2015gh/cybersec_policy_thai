@@ -1,10 +1,9 @@
 <?php
-
 namespace App;
 
 class Config {
    /**
     * path to the sqlite file
     */
-    const PATH_TO_SQLITE_FILE = '../sqlitedb1.db';
+    const PATH_TO_SQLITE_FILE = 'App_DB/sqlitedb1.db';
 }
