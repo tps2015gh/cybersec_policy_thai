@@ -90,6 +90,9 @@ class SQLiteInsert {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
 
-        return $this->pdo->lastInsertId();
+        // return $this->pdo->lastInsertId();
+        $sql = " UPDATE sqlite_sequence SET seq = 0 WHERE name = 'nodes' " ; 
+        $this->pdo->query($sql);
+        
     }    
 }

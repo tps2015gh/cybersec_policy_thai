@@ -16,49 +16,37 @@ use App\SQLiteConnection;
 // use App\SQLiteInsert;
 use App\SQLiteQuery;
 
-$pdo = (new SQLiteConnection())->connect();
+$pdo = (new SQLiteConnection())->connect(".");
 // print_r($pdo);
-
+?>
+    <form action="detail01_do.php" method="post">
+<?
 foreach([1,2,3] as  $node_id){
+    $node1 = (new SQLiteQuery($pdo))->getNode($node_id);
     $childNodes = (new SQLiteQuery($pdo))->getChildNodes($node_id );
+    echo "<h1>$node1->node_text</h1>";
     echo "<ol>";
     foreach($childNodes as $ch){
         echo "<li>";
-        echo "<input type=\"checkbox\" name=\"chk[$ch->node_id]\"> ";
+        echo $ch->status ;
+        echo " "; 
+        echo $ch->node_id ; 
+        if($ch->status == 'ok'){
+            echo "<input type=\"hidden\" name=\"chk[$ch->node_id]\"  value=\"No1\"> ";
+            echo "<input type=\"checkbox\" name=\"chk[$ch->node_id]\" CHECKED value=\"Yes\"> ";
+        }else{
+            echo "<input type=\"checkbox\" name=\"chk[$ch->node_id]\"   value=\"Yes\"> ";
+            echo "<input type=\"hidden\" name=\"chk[$ch->node_id]\"  value=\"No2\"> ";
+        }
         echo $ch->node_text ; 
         echo "</li>";
     }
     echo "</ol>";
-    echo "<hr>";
+    // echo "<hr>";
 }
-
 //==========================
-
-$ar_fname = ["systemsec01.json", "systemsec02.json", "systemsec03.json"];
-
-foreach ($ar_fname as $idx0 => $fname1) {
-    $fname = "DATA\\detail01\\" . $fname1;
-    $json = file_get_contents($fname);
-    $obj  = (object)json_decode($json, JSON_UNESCAPED_UNICODE);
-    // print_r($obj);
-    $obj->header = (object)$obj->header;
-?>
-
-    <h1>
-        <?= $obj->header->title ?>
-    </h1>
-
-    <form action="detail01_do.php" method="post">
-        <input type="hidden" name="detail_code" value="<?= $idx0 ?>">
-        <ol>
-            <? foreach($obj->best_practice as $idx0 => $bp){ ?>
-            <li>
-                <input type="checkbox" name="chk[<?= $idx0 ?>">
-                <?= $bp ?></li>
-            <? } ?>
-        </ol>
+ ?>
         <center>
             <input type="submit" value="ส่งข้อมูล">
         </center>
     </form>
-<?php } ?>

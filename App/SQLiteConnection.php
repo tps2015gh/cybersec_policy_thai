@@ -17,18 +17,17 @@ class SQLiteConnection {
      * return in instance of the PDO object that connects to the SQLite database
      * @return \PDO
      */
-    public function connect() {
+    public function connect($path_prefix) {
         if ($this->pdo == null) {
-            $this->pdo = new \PDO("sqlite:" . \App\Config::PATH_TO_SQLITE_FILE );
+            $this->pdo = new \PDO("sqlite:" . \App\Config::pathToSQLiteFile($path_prefix) );
         }
          return $this->pdo;
 
-        return "ATE";
     }
 }
 
-new SQLiteConnection();
-(new SQLiteConnection())->connect();
-// $pdo = (new SQLiteConnection())->connect();
-//print_r($pdo);
-$ret = Config::PATH_TO_SQLITE_FILE;
+// new SQLiteConnection();
+// (new SQLiteConnection())->connect();
+// // $pdo = (new SQLiteConnection())->connect();
+// //print_r($pdo);
+// $ret = Config::PATH_TO_SQLITE_FILE;
