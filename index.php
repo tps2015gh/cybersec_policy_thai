@@ -5,10 +5,12 @@
 <? include("_menu.php"); ?>
 
 <pre> 
-    run with 
+    1) run with 
     c:\xxxxxx\php.exe  -S localhost:82
     
-    browse with 
+    2) run <a href='http://localhost:82/setup/'>http://localhost:82/setup/</a>
+
+    3) browse with 
     http://localhost:82/
 </pre> 
 
