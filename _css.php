@@ -49,5 +49,9 @@ li.st_yes {
 li.st_no {
     color:silver;
 }
+li.st_no:hover {
+    color:blue;
+    background-color: lightblue;
+}
 
 </style>
