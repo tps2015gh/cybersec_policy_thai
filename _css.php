@@ -42,5 +42,12 @@ a:hover.menu {
 .mt-20p {
     margin-top: 20px;
 }
+li.st_yes {
+    color:black;
+    background-color: lightgreen;
+}
+li.st_no {
+    color:silver;
+}
 
 </style>
