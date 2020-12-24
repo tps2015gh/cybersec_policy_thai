@@ -1,0 +1,15 @@
+body {background-color:lightgoldenrodyellow;}
+#header  { background-color:paleturquoise;
+    padding-left:10px;
+    padding-bottom:4px;
+    padding-top:4px;
+    }
+
+#footer {
+                
+                background-color:paleturquoise;
+                margin-left: 0%;
+                margin-right: 0%;
+                padding:4px;
+                
+            }
